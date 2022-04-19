@@ -1,14 +1,8 @@
-
-/*
- * Macro template to process multiple images in a folder
- */
-
+// Define input and output folders as well as image type
 #@ File (label = "Input directory", style = "directory") input
 #@ File (label = "Output directory", style = "directory") output
 #@ String (label = "File suffix", value = ".tif") suffix
 
-// See also Process_Folder.py for a version of this code
-// in the Python scripting language.
 
 processFolder(input);
 
@@ -25,26 +19,44 @@ function processFolder(input) {
 }
 
 function processFile(input, output, file) {
-	// Do the processing here by adding your own code.
-	// Leave the print statements until things work, then remove them.
-	//IJ.run(file, "Measure");
-	open(file);
-	//getStatistics(area);
-	getValue("IntDen")
-	//setResult("Area", file, area);
-	saveAs("text", output + file);
-	//close();
-	close("\\Others");
-	//run("Close");
+	
+	// open file
+	open(input + File.separator + file);
+	print("Processing: " + input + File.separator + file);
+	
+	//convert to mask
+	run("Threshold...");
+	setAutoThreshold("Otsu");
+	setThreshold(1, 2, "raw");
+	setOption("BlackBackground", false);
+	run("Convert to Mask");
 
 	
-	print("Processing: " + input + File.separator + file);
+	run("Measure");
+	updateResults();
+	//run("Close");
+	
+	
+	
+	//get the area pixels of the mask
+	//getStatistics(area);
+	//getValue("Area");
+	//setResult("Area", file, area);
+	
+	//save results of the mask size
 	print("Saving to: " + output);
+	saveAs("results", output + File.separator + file + ".csv");	
+	run("Clear Results");
+	close();
+
+	
+	
 }
 
 
 
-
-
-
+run("Close All");
+run("Close All");
+run("Close All");
+run("Close");
 
