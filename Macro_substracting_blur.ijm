@@ -1,10 +1,9 @@
-
+// Ask for the input and output folders
 #@ File (label = "Input directory", style = "directory") input
 #@ File (label = "Output directory", style = "directory") output
 #@ String (label = "File suffix", value = ".tif") suffix
 
-// See also Process_Folder.py for a version of this code
-// in the Python scripting language.
+
 
 processFolder(input);
 
@@ -22,25 +21,28 @@ function processFolder(input) {
 
 
 function processFile(input, output, file) {
+	//open file
 	open(input + File.separator + file);
 	print("Processing: " + input + File.separator + file);
 	print(input);
 	print(file);
 	print(output);
 	selectWindow(file);
+	//duplicate file and rename
 	run("Duplicate...", "title=blur duplicate");
+	// add gaussian blur to duplicated image
 	run("Gaussian Blur...", "sigma=5 stack");
+	// substract duplicated image from original
 	imageCalculator("Subtract create stack", file,"blur");
 	selectWindow("blur");
 	close("blur");
 	selectWindow(file);
 	close(file);
+	// save new image to folder
 	print("Saving to: " + output);
 	saveAs("Tiff", output + File.separator +  file);
 	selectWindow(file);
 	close(file);
-
-
 
 
 	
