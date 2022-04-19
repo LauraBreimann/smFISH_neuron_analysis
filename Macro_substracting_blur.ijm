@@ -24,9 +24,6 @@ function processFile(input, output, file) {
 	//open file
 	open(input + File.separator + file);
 	print("Processing: " + input + File.separator + file);
-	print(input);
-	print(file);
-	print(output);
 	selectWindow(file);
 	//duplicate file and rename
 	run("Duplicate...", "title=blur duplicate");
