@@ -31,32 +31,24 @@ function processFile(input, output, file) {
 	setOption("BlackBackground", false);
 	run("Convert to Mask");
 
-	
+	//get the area pixels of the mask
 	run("Measure");
 	updateResults();
-	//run("Close");
 	
 	
-	
-	//get the area pixels of the mask
-	//getStatistics(area);
-	//getValue("Area");
-	//setResult("Area", file, area);
-	
-	//save results of the mask size
+	//save results of the mask size and close all windows
 	print("Saving to: " + output);
 	saveAs("results", output + File.separator + file + ".csv");	
 	run("Clear Results");
 	close();
-
+	close("Threshold");
+	close("Results");
+	
 	
 	
 }
 
+// close all windows
+run("Close All");
 
-
-run("Close All");
-run("Close All");
-run("Close All");
-run("Close");
 
