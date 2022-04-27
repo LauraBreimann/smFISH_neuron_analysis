@@ -84,5 +84,6 @@ function processFile(input, output, file) {
 }
 
 // close all windows
+print("Done");
 run("Close All");
 
