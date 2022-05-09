@@ -59,3 +59,4 @@ function processFile(input, output, file) {
 	selectWindow(file);
 	close(file);
 }
+print("Done");

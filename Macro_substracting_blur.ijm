@@ -44,3 +44,4 @@ function processFile(input, output, file) {
 
 	
 }
+print("Done");
