@@ -20,6 +20,6 @@
 
 <div style="text-align: justify">
   
-  **1.	Tiff file extraction from imaris files
+  ### 1.	Tiff file extraction from imaris files
   
   
