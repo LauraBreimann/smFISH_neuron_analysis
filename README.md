@@ -29,11 +29,11 @@
  ### 3.	Mask refinement and area detection using Fiji
   
   
- ###4.	smFISH analysis using RS-FISH
+ ### 4.	smFISH analysis using RS-FISH
   
   
- ###5.	Mask filtering using RS-FISH
+ ### 5.	Mask filtering using RS-FISH
   
   
- ###6.	Colletion of all datasets and plotting
+ ### 6.	Colletion of all datasets and plotting
   
