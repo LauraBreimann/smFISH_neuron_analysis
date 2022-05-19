@@ -1,3 +1,9 @@
+//===============================================================================
+// Opens raw image stacks from Imaris software, spilts the channels, renames the channels and saves separate tiffs
+// - Laura Breimann - 
+//===============================================================================
+
+
 // Define input and output folders as well as image type
 #@ File (label = "Input directory", style = "directory") input
 #@ File (label = "Output directory", style = "directory") output
@@ -22,6 +28,7 @@ function processFolder(input) {
 function processFile(input, output, file) {
 	
 	// open file and get title
+	// only uses the first and highest resolution image in the imaris file
 	print("Processing: " + input + File.separator + file + " " + "Resolution Level 1");
 	location = input + File.separator + file;
 	run("Bio-Formats Importer", "open=[location] color_mode=Default view=Hyperstack stack_order=XYCZT series_1 input=input output=output suffix=.ims");
@@ -30,6 +37,8 @@ function processFile(input, output, file) {
 	//split channels 
 	run("Split Channels");
 	
+	// the follwing code exprects a 4 channel image stack with the order of DAPI, GFP, smFISH-1, smFISH-2
+	// adapt the follwing code if the order is different in the images
 	
 	//select and save DAPI channel
 	selectWindow("C1-" + title);
