@@ -1,3 +1,8 @@
+//===============================================================================
+// Removes background in the smFISH images using a Difference of Gaussian (DoG) filter 
+// - Laura Breimann - 
+//===============================================================================
+
 // Ask for the input and output folders
 #@ File (label = "Input directory", style = "directory") input
 #@ File (label = "Output directory", style = "directory") output
@@ -28,6 +33,7 @@ function processFile(input, output, file) {
 	//duplicate file and rename
 	run("Duplicate...", "title=blur duplicate");
 	// add gaussian blur to duplicated image
+	// the sigma value needs to be determined before
 	run("Gaussian Blur...", "sigma=5 stack");
 	// substract duplicated image from original
 	imageCalculator("Subtract create stack", file,"blur");
@@ -35,7 +41,7 @@ function processFile(input, output, file) {
 	close("blur");
 	selectWindow(file);
 	close(file);
-	// save new image to folder
+	// save new image to folder and close the windows
 	print("Saving to: " + output);
 	saveAs("Tiff", output + File.separator +  file);
 	selectWindow(file);
