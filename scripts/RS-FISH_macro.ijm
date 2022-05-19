@@ -1,3 +1,8 @@
+//===============================================================================
+// Macro to detect all smFISH spots in the image using RS-FISH
+// - Laura Breimann - 
+//===============================================================================
+
 // This macro script runs the radial symmetry (RS) FIJI plug-in on all the images in all the sub-directories of the defined dir
 // After finding the best parameters using the RS plugin GUI interactive mode on one example image,
 // You can run this macro script on the entire dataset.
@@ -10,21 +15,19 @@
 
 // Path the tif files to be processed, searches all sub-directories.
 dir = "/Users/laurabreimann/Desktop/images_smFISH-2_blur-5/"
-// Location of file where all run times will be saved:
-//timeFile = "/Users/laurabreimann/Desktop/RS_Exe_times.txt";
 
 
 //////// Define RS parameters: //////////
 
-anisotropy = 1.00; 		// anisotropy
+anisotropy = 1.00; 			// anisotropy coefficient
 sigmaDoG = 1.6115; 			// sigma
-thresholdDoG = 0.0001; 			// threshold
-supportRadius = 2; 		// support
-inlierRatio = 0.219			// min_inlier_ratio
-maxError = 0.50340486; // max_error
-intensityThreshold=0;  		// spot_intensity_threshold
-imMin=0;   //min Image intentisy
-imMax=10000;  //max Image intensity
+thresholdDoG = 0.0001; 		// intensity threshold
+supportRadius = 2; 			// support radius
+inlierRatio = 0.219			// min inlier ratio
+maxError = 0.50340486; 		// max error
+intensityThreshold=0;  		// spot intensity threshold
+imMin=0;   					// min image intentisy
+imMax=10000;  				// max image intensity
 
 
 
@@ -53,6 +56,7 @@ function processImage(dirPath, imName) {
 	
 	open("" + dirPath + imName);
 
+	// save result as csv file with the image file name and a selection of parameters used for detection
 	results_csv_path = "" + dirPath + imName + " sigma=" + sigmaDoG + 
 	" threshold=" + thresholdDoG + 
 	" supportRadius=" + supportRadius + 
@@ -79,16 +83,12 @@ function processImage(dirPath, imName) {
 	" results_file=[" + results_csv_path + "]";
 	
 
-	
-
+	// write in log the paramters used
 	print(parameterString);
 
 	startTime = getTime();
 	run("RS-FISH", parameterString);
-	//exeTime = getTime() - startTime; //in miliseconds
 	
-	// Save exeTime to file:
-	//File.append(results_csv_path + "," + exeTime + "\n ", timeFile);
 
 	// Close all windows:
 	run("Close All");	
