@@ -1,3 +1,8 @@
+//===============================================================================
+// Records the size of the created mask file 
+// - Laura Breimann - 
+//===============================================================================
+
 // Define input and output folders as well as image type
 #@ File (label = "Input directory", style = "directory") input
 #@ File (label = "Output directory", style = "directory") output
