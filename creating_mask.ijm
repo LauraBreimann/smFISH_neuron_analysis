@@ -1,4 +1,7 @@
-
+//===============================================================================
+// Creates a binary mask from a ilastik output tiff file
+//  - Laura Breimann
+//===============================================================================
 #@ File (label = "Input directory", style = "directory") input
 #@ File (label = "Output directory", style = "directory") output
 #@ String (label = "File suffix", value = ".tiff") suffix
@@ -32,7 +35,8 @@ function processFile(input, output, file) {
 	run("Convert to Mask");
 	
 	
-	//smooth out the maks a bit
+	//Smooth out the mask a bit, first remove some small bits and then dilate the connected shapes. 
+	//This part depends a bit on the quality of the inital mask and might need to be adapted. 
 	run("Erode");
 	run("Erode");
 	run("Erode");
