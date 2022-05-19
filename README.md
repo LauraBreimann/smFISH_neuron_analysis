@@ -20,6 +20,20 @@
 
 <div style="text-align: justify">
   
-  ### 1.	Tiff file extraction from imaris files
+ ### 1.	Tiff file extraction from imaris files
   
+  
+ ### 2.	Mask creation using Ilastik
+  
+  
+ ### 3.	Mask refinement and area detection using Fiji
+  
+  
+ ###4.	smFISH analysis using RS-FISH
+  
+  
+ ###5.	Mask filtering using RS-FISH
+  
+  
+ ###6.	Colletion of all datasets and plotting
   
