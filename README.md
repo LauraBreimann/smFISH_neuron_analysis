@@ -54,7 +54,7 @@ Use ```open_ims_split_gfp_max.ijm``` script to open a set of .ims files, split t
   With the created mask, the resulting csv files can be filtered using the RS-FISH plugin "Mask filtering". Go to Plugins > RS-FISH > Tools > Mask filtering. 
   
  
-  <img src="https://github.com/LauraBreimann/smFISH_neuron_analysis/blob/main/screenshots/mask_filtering_plugin.png" alt="Screenshot oof the mask filtering plugin" width="400">
+  <img src="https://github.com/LauraBreimann/smFISH_neuron_analysis/blob/main/screenshots/mask_filtering_plugin.png" alt="Screenshot oof the mask filtering plugin" width="800">
   
   
   
