@@ -1,5 +1,5 @@
 //===============================================================================
-// Records the size of the created mask file 
+// Records the size of the created mask file in a csv file
 // - Laura Breimann - 
 //===============================================================================
 
