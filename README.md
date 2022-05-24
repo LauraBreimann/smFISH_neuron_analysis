@@ -44,14 +44,14 @@ Use ```open_ims_split_gfp_max.ijm``` script to open a set of .ims files, split t
   
  ### 4.	smFISH analysis using RS-FISH
   
- Optional to prepare the images using a difference of Gaussian filer. The macro script ```DoG_filter.ijm``` can be used. 
+ Optional to prepare the images using a difference of Gaussian filer. The macro script ```DoG_filter.ijm``` can be used. The sigma for the gaussian blur needs to be adapted for a new set of images. 
   
- To detect smFISH spots in the image, the Fii plugin RS-FISH can be used. The macro ```RS-FISH_macro.ijm``` can be used to run RS-FISH in batch mode. Find the parameters before and then run batch mode. 
+ To detect smFISH spots in the image, the Fiji plugin [RS-FISH](https://github.com/PreibischLab/RS-FISH) can be used (info on how to use RS-FISH and how to download the plugin can be found on the [RS-FISH](https://github.com/PreibischLab/RS-FISH) GitHub page). The macro ```RS-FISH_macro.ijm``` can be used to run RS-FISH in batch mode. Determine the parameters before using one representative image and then run the rest of the images in batch mode. 
   
   
  ### 5.	Mask filtering using RS-FISH
   
-  With the created mask, the resulting csv files can be filtered using the RS-FISH plugin "Mask filtering". Go to Plugins > RS-FISH > Tools > Mask filtering. 
+  With the created mask, the resulting csv files can be filtered using the [RS-FISH](https://github.com/PreibischLab/RS-FISH) plugin "Mask filtering". Go to ```Plugins > RS-FISH > Tools > Mask``` filtering. 
   
  
   <img src="https://github.com/LauraBreimann/smFISH_neuron_analysis/blob/main/screenshots/mask_filtering_plugin.png" alt="Screenshot oof the mask filtering plugin" width="800">
