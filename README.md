@@ -32,6 +32,12 @@
   Select ```Simple segmentation``` as output files format
   Select tiff file to export. 
   Batch mode for images that look similar
+    
+  <img src="https://github.com/LauraBreimann/smFISH_neuron_analysis/blob/main/screenshots/GFP_max.jpg" alt="Max projection of the GFP channel" width="400">
+  
+   <img src="https://github.com/LauraBreimann/smFISH_neuron_analysis/blob/main/screenshots/mask_after_ilastik.png" alt="Binary mask after ilastik segmentation" width="400">
+  
+  
   
   
  ### 3.	Mask refinement and area detection using Fiji
@@ -40,7 +46,13 @@
   Using the brush tool segemtnation can be corrected to remove small background signals or neighbouring cells. 
   Also the seperation of soma and neurite can be done with the brush and image calculation tool. 
   
+    <img src="  https://github.com/LauraBreimann/smFISH_neuron_analysis/blob/main/screenshots/mask_total_neuron.png" alt="Binary mask of the full neuron" width="300">
   
+    <img src="https://github.com/LauraBreimann/smFISH_neuron_analysis/blob/main/screenshots/mask_soma.png" alt="Binary mask of the soma" width="300">
+  
+    <img src="https://github.com/LauraBreimann/smFISH_neuron_analysis/blob/main/screenshots/mask_neurite.png" alt="Binary mask of the neurite" width="300">
+  
+
   
  ### 4.	smFISH analysis using RS-FISH
   
@@ -54,7 +66,7 @@
   With the created mask, the resulting csv files can be filtered using the [RS-FISH](https://github.com/PreibischLab/RS-FISH) plugin "Mask filtering". Go to ```Plugins > RS-FISH > Tools > Mask``` filtering. 
   
  
-  <img src="https://github.com/LauraBreimann/smFISH_neuron_analysis/blob/main/screenshots/mask_filtering_plugin.png" alt="Screenshot oof the mask filtering plugin" width="800">
+  <img src="https://github.com/LauraBreimann/smFISH_neuron_analysis/blob/main/screenshots/mask_filtering_plugin.png" alt="Screenshot of the mask filtering plugin" width="800">
   
   
   
