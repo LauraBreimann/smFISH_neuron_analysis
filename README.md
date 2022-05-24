@@ -22,23 +22,23 @@
   
  ### 1.	Tiff file extraction from imaris files
   
-Use ```open_ims_split_gfp_max.ijm``` script to open a set of .ims files, split the channels and resave them as single tiff files. 
+  Use the [Fiji](https://fiji.sc/) macro ```open_ims_split_gfp_max.ijm``` script to open a set of .ims files, split the channels and resave them as single tiff files. The renaming of the files exprects these channels and might have to be adaptes: 1. DAPI, 2. GFP, 3. smFISH-1, 4. smFISH-2. The script also  saves a max projection of the GFP channel, which might be used to create a binary mask.
   
   
  ### 2.	Mask creation using Ilastik
   
-  Use Ilastik (cite) to create masks. 
-  The Autocontex analysis step
-  Select Simple segmentation as output files format
+  [Ilastik](https://www.ilastik.org/) can be used to create a binary mask to filter the smFISH detections. Since neurons are pretty flat, mask are creeated from max projections of the GFP  channel. 
+  The ```Autocontex``` analysis step
+  Select ```Simple segmentation``` as output files format
   Select tiff file to export. 
-  Batch mode for images that looks similar
+  Batch mode for images that look similar
   
   
  ### 3.	Mask refinement and area detection using Fiji
   
-  Use the ```creating_mask.ijm``` to create binary masks from the segmentation. 
-  Using the brush tool segemtnation can be corrected. 
-  Also the seperation of soma and neurite  can be done with the brush and image calculation tool. 
+  Use the ```creating_mask.ijm``` to create binary masks from the Ilastik segmentation. 
+  Using the brush tool segemtnation can be corrected to remove small background signals or neighbouring cells. 
+  Also the seperation of soma and neurite can be done with the brush and image calculation tool. 
   
   
   
