@@ -46,11 +46,11 @@
   Using the brush tool segemtnation can be corrected to remove small background signals or neighbouring cells. 
   Also the seperation of soma and neurite can be done with the brush and image calculation tool. 
   
-    <img src="  https://github.com/LauraBreimann/smFISH_neuron_analysis/blob/main/screenshots/mask_total_neuron.png" alt="Binary mask of the full neuron" width="300">
+  <img src="https://github.com/LauraBreimann/smFISH_neuron_analysis/blob/main/screenshots/mask_total_neuron.png" alt="Binary mask of the full neuron" width="300">
   
-    <img src="https://github.com/LauraBreimann/smFISH_neuron_analysis/blob/main/screenshots/mask_soma.png" alt="Binary mask of the soma" width="300">
+  <img src="https://github.com/LauraBreimann/smFISH_neuron_analysis/blob/main/screenshots/mask_soma.png" alt="Binary mask of the soma" width="300">
   
-    <img src="https://github.com/LauraBreimann/smFISH_neuron_analysis/blob/main/screenshots/mask_neurite.png" alt="Binary mask of the neurite" width="300">
+  <img src="https://github.com/LauraBreimann/smFISH_neuron_analysis/blob/main/screenshots/mask_neurite.png" alt="Binary mask of the neurite" width="300">
   
 
   
