@@ -35,6 +35,9 @@ function processFile(input, output, file) {
 	setThreshold(1, 2, "raw");
 	setOption("BlackBackground", false);
 	run("Convert to Mask");
+	
+	// remove the scale and record size in pixels, this step might not be necessary 
+	run("Set Scale...", "distance=1 known=1 unit=pixel");
 
 	//get the area pixels of the mask
 	run("Measure");
