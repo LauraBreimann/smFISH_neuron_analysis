@@ -70,14 +70,14 @@ function processFile(input, output, file) {
 			
 	//select and save smFISH-1 channel
 	selectWindow("C3-" + title);
-	run("Magenta");
+	run("Grays");
 	resetMinAndMax();
 	saveAs(".tif", output + File.separator + file + "_C3" + ".tif");
 	close();
 	
 	//select and save smFISH-2 channel
 	selectWindow("C4-" + title);
-	run("Cyan");
+	run("Grays");
 	resetMinAndMax();
 	saveAs(".tif", output + File.separator + file + "_C4" + ".tif");
 	close();
