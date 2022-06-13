@@ -1,5 +1,5 @@
 //===============================================================================
-// Creates a binary mask from of the soma portion that is not the nucleus
+// Creates a binary mask from of the DAPI signal
 //  - Laura Breimann
 //===============================================================================
 #@ File (label = "DAPI directory", style = "directory") input
@@ -28,23 +28,16 @@ function processFile(input, output, file) {
 	open(input + File.separator + file);		
 	selectWindow(file);
 	
-	// create max-proejction
+	// create max-projection
 	run("Z Project...", "projection=Median");
 	selectWindow(file);
 	close(file);
 	setMinAndMax(101, 125);
 	saveAs("tiff", output + File.separator +  file + "_median");	
 
-	
-	
-	
-	//make a binary mask
-	//run("Convert to Mask", "method=Otsu background=Dark calculate");
-	//setThreshold(106, 255); //threshold found empirically
-	//setAutoThreshold("Otsu dark");
+		
 	//run("Convert to Mask"); 
-	setThreshold(101, 5000, "raw");
-	//setThreshold(106, 255);
+	setThreshold(101, 5000, "raw"); // this threshold depends on the DAPI signal and the background, needs to be adapted
 	run("Convert to Mask");
 	
 	//Smooth out the mask a bit, first remove some small bits and then dilate the connected shapes. 
@@ -66,8 +59,8 @@ function processFile(input, output, file) {
 	
 	// save file to output folder 
 	print("Saving to: " + output);
-	saveAs("tif", output + File.separator +  file + "_mask");
-	saveAs("PNG", output + File.separator +  file + "_mask");	
+	saveAs("tif", output + File.separator +  file + "_mask"); //actual mask file
+	saveAs("PNG", output + File.separator +  file + "_mask");	//just to have a quick view at the result
 	close();
 }
 print("Done");
