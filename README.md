@@ -37,7 +37,7 @@ Use the [Fiji](https://fiji.sc/) macro ```open_ims_split_gfp_max.ijm``` script t
   
  ### 3.	Mask refinement and area detection using Fiji
   
-Use the ```creating_mask.ijm``` to create binary masks from the Ilastik segmentation. Using the paintbrush tool, the segmentation can be corrected to remove small background signals or neighbouring cells by coloring them in white (with a value of 0). Small corrections on the masks can be perfromed using black (with a value of 1). Additionally, the separation of soma and neurite can be done with the brush and ```Image Calculator``` tool. 
+Use the ```creating_mask.ijm``` to create binary masks from the Ilastik segmentation. Using the paintbrush tool, the segmentation can be corrected to remove small background signals or neighbouring cells by coloring them in white (with a value of 0). Small corrections on the masks can be perfromed using black (with a value of 1). Additionally, the separation of soma and neurite can be done with the brush and ```Image Calculator``` tool in Fiji. 
   
   <img src="https://github.com/LauraBreimann/smFISH_neuron_analysis/blob/main/screenshots/mask_total_neuron.png" alt="Binary mask of the full neuron" width="250">
   
