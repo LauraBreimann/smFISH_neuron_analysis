@@ -10,6 +10,10 @@
 #@ String (label = "File suffix", value = ".ims") suffix
 
 
+// this prevents the opening of the images, comment this out if you want to see the images while it's processing 
+setBatchMode(true);
+
+
 processFolder(input);
 
 // function to scan folders/subfolders/files to find files with correct suffix
@@ -23,6 +27,7 @@ function processFolder(input) {
 			processFile(input, output, list[i]);
 	}
 }
+
 
 
 function processFile(input, output, file) {
@@ -76,11 +81,11 @@ function processFile(input, output, file) {
 	close();
 	
 	//select and save smFISH-2 channel
-	selectWindow("C4-" + title);
-	run("Grays");
-	resetMinAndMax();
-	saveAs(".tif", output + File.separator + file + "_C4" + ".tif");
-	close();
+	//selectWindow("C4-" + title);
+	//run("Grays");
+	//resetMinAndMax();
+	//saveAs(".tif", output + File.separator + file + "_C4" + ".tif");
+	//close();
 	
 		
 	//saved all images info
