@@ -36,6 +36,8 @@ function processFile(input, output, file) {
 	setOption("BlackBackground", false);
 	run("Convert to Mask");
 	
+	run("Create Selection");
+	
 	// remove the scale and record size in pixels, this step might not be necessary 
 	run("Set Scale...", "distance=1 known=1 unit=pixel");
 
@@ -58,5 +60,6 @@ function processFile(input, output, file) {
 
 // close all windows
 run("Close All");
+print("Done";
 
 
