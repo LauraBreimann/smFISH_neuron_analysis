@@ -60,6 +60,6 @@ function processFile(input, output, file) {
 
 // close all windows
 run("Close All");
-print("Done";
+print("Done");
 
 
