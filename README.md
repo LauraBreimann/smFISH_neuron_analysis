@@ -4,6 +4,7 @@
 
 </div>
 
+This pipeline is part of the publication [Mendonsa, S. et al. Massively parallel identification of mRNA localization elements in primary cortical neurons. Nat Neurosci 1–12 (2023)](https://www.nature.com/articles/s41593-022-01243-x)
 
 ### Pipeline
 
